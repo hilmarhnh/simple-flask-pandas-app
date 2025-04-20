@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data CSV</title>
+</head>
+<body>
+    <h1>Data dari CSV</h1>
+    <table border="1">
+        <tr>
+            {% for kolom in data.columns %}
+            <th>{{ kolom }}</th>
+            {% endfor %}
+        </tr>
+        {% for index, row in data.iterrows() %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
